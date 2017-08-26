@@ -36,7 +36,7 @@ function getValue(token) {
         case "number":
             return Number(token.value);
         case "boolean":
-            return Boolean(token.value);
+            return token.value === "true";
         default:
             return token.value;
     }
