@@ -1,0 +1,14 @@
+{
+  "name": "cmdp",
+  "version": "1.0.0",
+  "description": "A simple command parser.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./node_modules/jasmine/bin/jasmine"
+  },
+  "author": "Simon Bo Dall Mikkelsen",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^2.7.0"
+  }
+}
