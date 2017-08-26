@@ -1,8 +1,8 @@
 const makeIterator = require("./iterator");
 
 function parse(tokens) {
-    const call = {
-        command: tokens.shift().value,
+    const command = {
+        name: tokens.shift().value,
         arguments: [],
         options: []
     };
@@ -22,13 +22,13 @@ function parse(tokens) {
                 }
             }
 
-            call.options.push(option);
+            command.options.push(option);
         } else {
-            call.arguments.push(getValue(iterator.current));
+            command.arguments.push(getValue(iterator.current));
         }
     }
 
-    return call;
+    return command;
 }
 
 function getValue(token) {
