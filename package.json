@@ -8,6 +8,10 @@
   },
   "author": "Simon Bo Dall Mikkelsen",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Wizhi/cmdp"
+  },
   "devDependencies": {
     "jasmine": "^2.7.0"
   }
