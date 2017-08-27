@@ -1,5 +1,5 @@
 describe("Iterator", function () {
-    const makeIterator = require('../src/iterator');
+    const makeIterator = require("../src/iterator");
 
     it("should indicate if it's able to proceed", function () {
         const string = "abc";

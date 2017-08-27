@@ -1,5 +1,5 @@
 describe("Lexer", function () {
-    let lex = require('../src/lexer');
+    let lex = require("../src/lexer");
 
     it("should be able to tokenize literals", function () {
         expect(lex("test")).toEqual([
@@ -34,23 +34,23 @@ describe("Lexer", function () {
         ]);
     });
 
-    it("should be able to tokenize a short flag", function () {
+    it("should be able to tokenize a short option", function () {
         expect(lex("-a")).toEqual([
-            { type: "flag", value: "a" }
+            { type: "option", value: "a" }
         ]);
     });
 
-    it("should be able to tokenize multiple short flags", function () {
+    it("should be able to tokenize multiple short options", function () {
         expect(lex("-abc")).toEqual([
-            { type: "flag", value: "a" },
-            { type: "flag", value: "b" },
-            { type: "flag", value: "c" }
+            { type: "option", value: "a" },
+            { type: "option", value: "b" },
+            { type: "option", value: "c" }
         ]);
     });
 
-    it("should be able to tokenize a long flag", function () {
+    it("should be able to tokenize a long option", function () {
         expect(lex("--test-case")).toEqual([
-            { type: "flag", value: "test-case" }
+            { type: "option", value: "test-case" }
         ]);
     });
 });

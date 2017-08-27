@@ -15,7 +15,7 @@ function parse(tokens) {
     const iterator = makeIterator(tokens);
 
     while (iterator.next()) {
-        if (iterator.current.type === "flag") {
+        if (iterator.current.type === "option") {
             const option = {
                 name: iterator.current.value,
                 value: undefined

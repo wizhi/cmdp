@@ -51,15 +51,15 @@ function lex(input) {
                 iterator.next();
 
                 tokens.push({
-                    type: "flag",
+                    type: "option",
                     value: _scanAllowed(iterator, tokenSets.literal)
                 });
             } else {
-                const flags = _scanAllowed(iterator, tokenSets.literal);
+                const options = _scanAllowed(iterator, tokenSets.literal);
 
-                flags.split("").forEach(flag => tokens.push({
-                    type: "flag",
-                    value: flag
+                options.split("").forEach(option => tokens.push({
+                    type: "option",
+                    value: option
                 }));
             }
         } else if (iterator.current === "'" || iterator.current === "\"") {
