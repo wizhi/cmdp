@@ -43,6 +43,10 @@ function getValue(token) {
             return Number(token.value);
         case "boolean":
             return token.value === "true";
+        case "literal":
+            if (token.value === "null") {
+                return null;
+            }
         default:
             return token.value;
     }
