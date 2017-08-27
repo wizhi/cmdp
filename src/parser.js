@@ -1,8 +1,14 @@
 const makeIterator = require("./iterator");
 
 function parse(tokens) {
+    const nameToken = tokens.shift();
+
+    if (nameToken.type !== "literal") {
+        throw new Error("Parsing error: command name must a literal");
+    }
+
     const command = {
-        name: tokens.shift().value,
+        name: nameToken.value,
         arguments: [],
         options: []
     };
