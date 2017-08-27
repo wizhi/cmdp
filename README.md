@@ -53,23 +53,23 @@ Options come in short and long formats, prefixed with `-` and `--` respectively.
 
 `cmdp` will recognize the type of any value, and convert them to their correct JavaScript counterpart. Currently the following are supported:
 
-| name    | format            | description                                                    | type    |
-|---------|-------------------|----------------------------------------------------------------|---------|
-| literal | `[a-zA-Z0-9\-_]+` | any single group of characters                                 | string  |
-| string  | `("|')(.*?)("|')` | any character between a set of matching delimeters, `'` or `"` | string  |
-| number  | `[0-9\.]+`        | any number using a dot for decimal seperation                  | number  |
-| boolean | `(true|false)`    | either one when not inside of string delimeters                | boolean |
-| null    | `null`            | a literal null not inside of string delimeters                 | null    |
+| name    | format              | description                                                    | type      |
+|---------|---------------------|----------------------------------------------------------------|-----------|
+| literal | `[a-zA-Z0-9\-_]+`   | any single group of characters                                 | `string`  |
+| string  | `("\|')(.*?)("\|')` | any character between a set of matching delimeters, `'` or `"` | `string`  |
+| number  | `[0-9\.]+`          | any number using a dot for decimal seperation                  | `number`  |
+| boolean | `(true\|false)`     | either one when not inside of string delimeters                | `boolean` |
+| null    | `null`              | a literal null not inside of string delimeters                 | `null`    |
 
 ### Command structure
 
 The structure of a parsed command was already shown in the above example, but in detail it will contain:
 
-| property  | type             | description                                                            |
-|-----------|------------------|------------------------------------------------------------------------|
-| name      | string           | the name of the command                                                |
-| arguments | Array.\<mixed\>  | the argument values                                                    |
-| options   | Array.\<object\> | options without their "-" or "--" prefixes, and their associated value |
+| property  | type               | description                                                            |
+|-----------|--------------------|------------------------------------------------------------------------|
+| name      | `string`           | the name of the command                                                |
+| arguments | `Array.\<mixed\>`  | the argument values                                                    |
+| options   | `Array.\<object\>` | options without their "-" or "--" prefixes, and their associated value |
 
 An option consists of a `name` and a `value`. `name` will always be a string, while `value` will be a mixed type, or undefined.
 
